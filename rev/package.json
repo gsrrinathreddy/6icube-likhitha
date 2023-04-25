@@ -1,0 +1,15 @@
+{
+  "name": "rev",
+  "version": "1.0.0",
+  "description": "My first Api",
+  "main": "index.js",
+  "type":"module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Likhi",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
