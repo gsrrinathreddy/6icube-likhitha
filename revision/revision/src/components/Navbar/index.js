@@ -15,10 +15,14 @@ import AdbIcon from '@mui/icons-material/Adb';
 import {Link} from 'react-router-dom'
 
 
-const pages = ['Products', 'Albums', 'Appbar','Users','Photos'];
+//const pages = ['Products', 'Albums', 'Appbar','Users','Photos'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
-function Navbar() {
+function Navbar(props) {
+  const bgcolor=props.bgcolor;
+  const buttoncolor=props.buttoncolor;
+  const pages=props.pages;
+  
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -38,7 +42,7 @@ function Navbar() {
   };
 
   return (
-    <AppBar position="static">
+    <AppBar position="static" sx={{backgroundColor:`${bgcolor}`}}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
@@ -121,7 +125,7 @@ function Navbar() {
               <Button
                 key={page}
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block' }}
+                sx={{ my: 2, color: `${buttoncolor}`, display: 'block' }}
               >
                 {page}
               </Button>

@@ -9,7 +9,7 @@ import Typography from '@mui/material/Typography';
 
 export default function BasicCard() {
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ maxWidth: 350, marginLeft:"10px" }}>
       <CardMedia
         sx={{ height: 140 }}
         image="/static/images/cards/contemplative-reptile.jpg"
