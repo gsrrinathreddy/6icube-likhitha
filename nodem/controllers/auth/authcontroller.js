@@ -3,7 +3,7 @@ import bcrypt from 'bcrypt';
 export const register = async(req,res)=>{
     const{firstName,lastName,email,mobile,password}=req.body;
     if(!firstName || !lastName|| !email || !mobile || !password )
-    return res.status(400).json({message:"all fields are mandatory"});
+    return res.status(400).json({message:"all fields are mandatory"});sW
     const existinguser = await User.findOne({ email });
     if (existinguser)
     return res.status(400).json({message: 'user already exists'   });
@@ -33,7 +33,7 @@ export const updateByUserId = async (req,res)=>{
         console.log(updatedUser)
         if(!updatedUser)
         return res.status(400).json({message:"id does not exists"});
-        return res.status(200).json({message:'Us          er updated'});
+        return res.status(200).json({message:'User updated'});
     }catch (err){
         res.status(500).json({message:err})
     }

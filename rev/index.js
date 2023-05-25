@@ -1,5 +1,8 @@
 import express from "express";
 import cors from "cors";
+import mongoose from "mongoose";
+import dotenv from"dotenv";
+dotenv.config();
 
 const app=express();
 app.use(cors())
@@ -37,6 +40,14 @@ app.get("/Cosmetics",(req,res)=>{
     )
 
 })
+mongoose
+.connect(process.env.MONGO_URI,{
+
+})
+.then(()=>{
+    console.log("connected to DB")
+})
+.catch((error)=>console.log(`${error} did not connect`));
 app.listen(8002,()=>{
     console.log("my server is running on port 8002")
 })
