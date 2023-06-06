@@ -13,7 +13,7 @@ import AddLocationAltIcon from '@mui/icons-material/AddLocationAlt';
 export default function BasicCard(props) {
     const image=props.image
   return (
-    <Card sx={{ maxWidth: 300,margin:"55px",backgroundColor:"#fafafa" }}>
+    <Card sx={{ maxWidth: 350,margin:"30px",backgroundColor:"#fafafa" }}>
       <CardMedia
         sx={{ height: 130}}
         image={props.image}
@@ -21,24 +21,24 @@ export default function BasicCard(props) {
       />
       <CardContent>
         
-        <Typography gutterBottom variant="h6" component="div"  >
+        <Typography variant="h6" component="div" textAlign="center" >
         
           {props.title} 
         </Typography>
         <CardActions >
-        <Typography gutterBottom variant="h11" component="div">
+        <Typography  variant="h11" component="div">
           <CalendarTodayIcon/>
          {props.day}
         </Typography>
         </CardActions>
         <CardActions>
-        <Typography gutterBottom variant="h11" component="div">
+        <Typography  variant="h11" component="div">
           <AccessTimeIcon/>
          {props.time}
         </Typography>
         </CardActions>
         <CardActions>
-        <Typography gutterBottom variant="h7" component="div">
+        <Typography variant="h7"  textAlign="justify" component="div">
           <AddLocationAltIcon/>
         {props.address}
         </Typography>

@@ -14,11 +14,11 @@ export default function LabTabs() {
   };
 
   return (
-    <Box sx={{ width: '100%', typography: 'body1'  }}>
+    <Box sx={{ width: '100', typography: 'body1'  }}>
       <TabContext value={value}>
-        <Box sx={{ borderBottom: 11, borderColor: 'divider' }}>
-          <TabList onChange={handleChange} aria-label="lab API tabs example" >
-            <Tab label="Top" value="1"  marginLeft="50px" sx={{ backgroundColor:"magenta"}} />
+        <Box sx={{ borderBottom: 11, borderColor: 'divider',marginLeft:"550px" }}>
+          <TabList onChange={handleChange} aria-label="lab API tabs example"  sx={{marginTop:"30px"}}>
+            <Tab label="Top" value="1"  sx={{ backgroundColor:"magenta", marginRight:"10px"}} />
             <Tab label="This Weekend" value="2" sx={{ backgroundColor:"magenta"}} />
             
           </TabList>
@@ -56,7 +56,7 @@ export default function LabTabs() {
   </Grid>
 
 
-  <Grid xs={6} marginTop="20px">
+  <Grid xs={12} marginTop="20px">
   <Typography variant="h6" >
   Hot Brown Honey THE REMIX - May 30 
         </Typography>
@@ -105,7 +105,7 @@ export default function LabTabs() {
   </Grid>
 
 
-  <Grid xs={12} marginTop="20px">
+  <Grid xs={6} marginTop="20px">
   <Typography variant="h6" >
   Hot Brown Honey THE REMIX - May 30 
         </Typography>

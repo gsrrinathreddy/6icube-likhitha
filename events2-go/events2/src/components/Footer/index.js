@@ -2,11 +2,11 @@ import { Grid, Typography } from "@mui/material";
 import IconButton from '@mui/material/IconButton';
 import Avatar from '@mui/material/Avatar';
 
-export default function Navebar(){
+export default function Footer(){
     
     return(
         <>
-        <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }} marginTop="230px" >
+        <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }} marginTop="150px" >
   <Grid xs={3}>
   <Typography variant="h6">
             FIND EVENTS
@@ -51,10 +51,12 @@ export default function Navebar(){
               </IconButton>
           
   </Grid>
-</Grid>
-<Typography variant="h8" marginTop="1000px" marginRight="800px" >
+<Grid xs={6} marginTop="30px" marginBottom="50px">
+<Typography variant="h8"  >
 © Copyright Events2go. All Rights Reserved
           </Typography>
+          </Grid>
+          </Grid>
         </>
     )
 }

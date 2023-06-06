@@ -27,6 +27,15 @@
 .App-link {
   color: #61dafb;
 }
+.head-text {
+  position: relative;
+}
+.text-on-image {
+ position: absolute;
+ right: 50%;
+ left: 50%;
+ bottom: 15%;
+}
 
 @keyframes App-logo-spin {
   from {

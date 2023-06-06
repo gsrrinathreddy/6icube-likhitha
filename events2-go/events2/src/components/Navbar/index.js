@@ -11,15 +11,20 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import Home from '../../pages/Home';
 
 
-const pages = ['Home', 'About','Events', 'Blog','Contact'];
+
+const pages = [ 'About','Events', 'Blog','Contact'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 function Navbar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
+  const navigate = useNavigate();
 
+  
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
@@ -34,7 +39,21 @@ function Navbar() {
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };
+ 
+  const onLogin = (e) => {
+    e.preventDefault();
+    navigate('/login')
+  
+  };
+  const onSignup = (e) => {
+    e.preventDefault();
+    navigate('/Signup')
 
+  }
+  const onHome=(e)=>{
+    e.preventDefault();
+    navigate('/Home')
+  }
   return (
     <AppBar position="fixed" sx={{backgroundColor:"white"}}>
       <Container maxWidth="xl">
@@ -47,7 +66,7 @@ function Navbar() {
             href="/"
             sx={{
               mr: 2,
-              display: { xs: 'none', md: 'flex',marginRight:"200px" },
+              display: { xs: 'none', md: 'flex' },
               fontFamily: 'monospace',
               fontWeight: 700,
               letterSpacing: '.20rem',
@@ -55,10 +74,10 @@ function Navbar() {
               textDecoration: 'none',
             }}
           >
-            <img alt="kk" src="http://buzzitsolutions.com/events/assets/front/images/logo-white.png " width="120" height="50"/>
+            <img alt="kk" src="http://events2go.com.au/assets/front/images/logo-black.png " width="120" height="70" onClick={onHome}/>
 
           </Typography>
-          
+          <Box sx={{flexGrow:1}}/>
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
               size="large"
@@ -89,9 +108,11 @@ function Navbar() {
               }}
             >
               {pages.map((page) => (
+                
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
                   <Typography textAlign="center">{page}</Typography>
                 </MenuItem>
+                
               ))}
             </Menu>
           </Box>
@@ -127,35 +148,20 @@ function Navbar() {
               </Link>
             ))}
           </Box>
-
-          <Box sx={{ flexGrow: 0 }}>
-            <Tooltip title="Open settings">
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-
-              </IconButton>
-            </Tooltip>
-            <Menu
-              sx={{ mt: '45px' }}
-              id="menu-appbar"
-              anchorEl={anchorElUser}
-              anchorOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-              }}
-              open={Boolean(anchorElUser)}
-              onClose={handleCloseUserMenu}
-            >
-              {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
-                </MenuItem>
-              ))}
-            </Menu>
+          <Box sx={{flexGrow:0}}/>
+          <Box sx={{ flexGrow: 0 }} >
+            
+             
+              <Button variant="contained" onClick={onLogin}  color="success" sx={{backgroundColor:"magenta", marginRight:'10px'}} >
+          LOGIN
+        </Button> 
+   
+     
+        <Button variant="contained" onClick={onSignup} color="success" sx={{backgroundColor:"magenta"}} >
+          SIGNUP
+        </Button>
+      
+            
           </Box>
         </Toolbar>
       </Container>

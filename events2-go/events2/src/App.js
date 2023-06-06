@@ -4,11 +4,13 @@ import Navbar from './components/Navbar';
 import {BrowserRouter,Routes,Route} from "react-router-dom"
 import About from './pages/About';
 import Blog from './pages/Blog';
-import Navebar from './components/Navebar';
-
 import Events from './pages/Events';
 import Home from './pages/Home';
 import Contact from './pages/Contact';
+import Footer from './components/Footer';
+import Login from './pages/Login';
+import Signup from './pages/Signup';
+import Registration from './pages/Registration';
 
 function App() {
   return (
@@ -21,11 +23,14 @@ function App() {
         <Route path="Contact" element={<Contact/>}/>
         <Route path="Events" element={<Events/>}/>
         <Route path="Home" element={<Home/>}/> 
+        <Route path="/login" element={<Login/>}/>
+        <Route path='/Signup' element={<Signup/>}/>
+        <Route path='/Registration' element={<Registration/>}/>
 
       </Routes>
     
      </BrowserRouter>
-     <Navebar />
+     <Footer/>
     </div>
   );
 }
